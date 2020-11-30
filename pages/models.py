@@ -1,6 +1,7 @@
 from django.db import models
 
-# Application to hold personal information: can therefore be modified through admin
+
+# Model to hold personal information: can therefore be modified through admin
 class PersonalInformation(models.Model):
     """Model holding my personal information"""
     bio = models.TextField(max_length=1000)
@@ -11,18 +12,28 @@ class PersonalInformation(models.Model):
         return "My personal information"
 
 
-# Model for applications to be hosted on the site
-class Application(models.Model):
+# Model for project to be hosted on the site
+class Project(models.Model):
     """Model representing information about an appliction"""
-    app_verbose_name = models.CharField(max_length=200)
-    app_django_name = models.CharField(max_length=100)
+    project_verbose_name = models.CharField(max_length=200)
+    project_django_name = models.CharField(max_length=100)
     upload_date = models.DateField()
     description = models.TextField(max_length=1000)
 
     def __str__(self):
         """String for representing the model option"""
-        return f'{self.app_name} - {self.upload_date}'
+        return f'{self.project_verbose_name} - {self.upload_date}'
 
     def get_absolute_url(self):
         """Returns the url to access a particular applications"""
-        return f'{self.app_django_name}: '
+        return f'{self.project_django_name}: '
+
+
+class Webpage(models.Model):
+    """Model holding the text to be posted on a given webpage"""
+    page_name = models.CharField(max_length=100)
+    title = models.CharField(max_length=100)
+    text = models.TextField(max_length=1000)
+
+    def __str__(self):
+        return f'{self.page_name}'

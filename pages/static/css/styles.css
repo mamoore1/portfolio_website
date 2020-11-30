@@ -1,0 +1,71 @@
+/* Add a black background */
+body {
+    background-color: #080508;
+    color: #E0E0E0;
+    font-family: Helvetica, Arial, sans-serif;
+    font-size: 20px;
+}
+
+.page_text {
+    font-size: 40px;
+    line-height: 200%;
+    width: 75%;
+}
+
+.page_text #header {
+    line-height: 50%;
+}
+
+.personal {
+    font-size: 16px;
+}
+
+/* Add a medium orchid background color to the top navigation */
+.topnav {
+  overflow: hidden;
+  position: relative;
+  text-align: center;
+  padding-top: 14px;
+  padding-bottom: 16px
+}
+
+.topnav:after {
+    content: "";
+    display: block;
+    margin-top: 16px;
+    border-bottom: 2px solid white;
+}
+
+/* Style the links inside the navigation bar */
+.topnav a {
+  color: #E6E6FA;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+  font-size: 20px;
+}
+
+/* Change the color of links on hover */
+.topnav a:hover {
+  background-color: #190033;
+  color: white;
+}
+
+table {
+    font-size: 30px;
+    text-align: left;
+}
+
+.blank-col {
+    width: 33%;
+}
+
+table p {
+    font-size: 20px;
+    line-height: 150%;
+}
+
+.project {
+    font-size: 40px;
+    line-height: 100%;
+}

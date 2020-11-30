@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  {% block title %}<title>Michael Moore</title>{% endblock %}
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  {% load static %}
+  <link rel="stylesheet" href="{% static 'css/styles.css' %}">
+</head>
+<body>
+      {% block topnav %}
+      <div class="personal">
+          <h2>Michael Moore</h2>
+      </div>
+        <div class="topnav">
+            <a href="{% url 'about' %}">About</a>
+            <a href="{% url 'projects' %}">Projects</a>
+            <a class="active" href="{% url 'home' %}">Home</a>
+        </div>
+     {% endblock %}
+    {% block content %}
+    {% endblock %}
+</body>
+</html>

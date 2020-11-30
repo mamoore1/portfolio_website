@@ -1,0 +1,21 @@
+{% extends "base_generic.html" %}
+
+{% block content %}
+<div class="page_text">
+    <p id="header">Projects</p>
+<table>
+    {% for project in project_list %}
+        {% cycle 'row' '' as row silent %}
+        {% if row %}<tr>{% endif %}
+        <td>
+            <p class="project">{{ project.project_verbose_name }}</p>
+            <p>{{ project.description }}</p>
+        </td>
+        {% if row %}
+        <td class="blank-col"></td>
+        {% endif %}
+        {% if not row %}</tr>{% endif %}
+    {% endfor %}
+
+</table>
+{% endblock %}
