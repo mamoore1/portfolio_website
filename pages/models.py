@@ -1,5 +1,5 @@
 from django.db import models
-
+from django.urls import reverse
 
 # Model to hold personal information: can therefore be modified through admin
 class PersonalInformation(models.Model):
@@ -17,8 +17,11 @@ class Project(models.Model):
     """Model representing information about an appliction"""
     project_verbose_name = models.CharField(max_length=200)
     project_django_name = models.CharField(max_length=100)
+    stored_on_github = models.IntegerField(default=0)
+    github_url = models.URLField()
     upload_date = models.DateField()
     description = models.TextField(max_length=1000)
+
 
     def __str__(self):
         """String for representing the model option"""
@@ -26,7 +29,7 @@ class Project(models.Model):
 
     def get_absolute_url(self):
         """Returns the url to access a particular applications"""
-        return f'{self.project_django_name}: '
+        return reverse(f'{self.project_django_name}:index')
 
 
 class Webpage(models.Model):

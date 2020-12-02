@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>NPC Generator</title>
+</head>
+<body>
+    <h2>D&D 3.5 NPC Generator</h2>
+    <a href="javascript:window.location.reload(true)">Generate again.</a>
+    <a href="{% url 'npc_generator:index' %}">Generate new characters.</a>
+{% if characters %}
+    {% for character in characters %}
+        <h4>Level {{ character.level }} {{ character.name }}</h4>
+        <p>HP: {{ character.hp }} AC: {{ character.ac }} Armour: {{character.armour}}</p>
+        <p>Abilities: STR: {{character.str}}, DEX: {{character.dex}}, CON: {{character.con }}, INT: {{character.int}},
+            WIS: {{character.wis}}, CHA: {{character.cha}}</p>
+        <p>Base attack: +{{ character.base_attack }}, Melee attack: +{{ character.melee_attack }} ({{ character.melee_weapon.weapon_name }}
+            {{ character.melee_weapon.weapon_damage }}+{{ character.str_mod }}), Ranged attack: +{{ character.ranged_attack }}
+         ({{character.ranged_weapon.weapon_name }} {{ character.ranged_weapon.weapon_damage}})</p>
+        <p>Saves: F/R/W +{{character.fort_save}}/+{{character.reflex_save}}/+{{character.will_save}}</p>
+    {% endfor %}
+{% endif %}
+</body>
+</html>

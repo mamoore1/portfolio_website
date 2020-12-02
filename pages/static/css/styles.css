@@ -16,8 +16,9 @@ body {
     line-height: 50%;
 }
 
-.personal {
-    font-size: 16px;
+.personal a {
+    color: #E6E6FA;
+    text-decoration: none;
 }
 
 /* Add a medium orchid background color to the top navigation */
@@ -47,7 +48,7 @@ body {
 
 /* Change the color of links on hover */
 .topnav a:hover {
-  background-color: #190033;
+  background-color: #181518;
   color: white;
 }
 

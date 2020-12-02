@@ -8,7 +8,11 @@
         {% cycle 'row' '' as row silent %}
         {% if row %}<tr>{% endif %}
         <td>
-            <p class="project">{{ project.project_verbose_name }}</p>
+            <p class="project">
+                {% if project.stored_on_github %}<a href="{{project.github_url}}">
+                {% else %}<a href="{{project.get_absolute_url}}">
+                {% endif %}
+                {{ project.project_verbose_name }}</a></p>
             <p>{{ project.description }}</p>
         </td>
         {% if row %}
