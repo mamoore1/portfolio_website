@@ -12,7 +12,7 @@
                 {% if project.stored_on_github %}<a href="{{project.github_url}}">
                 {% else %}<a href="{{project.get_absolute_url}}">
                 {% endif %}
-                {{ project.project_verbose_name }}</a></p>
+                {{ project.project_verbose_name }} {{ project.upload_date }}</a></p>
             <p>{{ project.description }}</p>
         </td>
         {% if row %}

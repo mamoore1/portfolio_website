@@ -25,7 +25,7 @@ def about(request):
 # Apps page view: displays a list of the currently available apps
 def projects(request):
     """View function for projects page"""
-    project_list = Project.objects.all()
+    project_list = Project.objects.all().order_by('upload_date')
     context = {
         'project_list': project_list,
     }
