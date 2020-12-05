@@ -3,6 +3,6 @@
 {% block content %}
 <div class="page_text">
     <p id="header">About Me</p>
-    <p>{{ webpage.bio }}</p>
+    <p>{{ webpage.bio|linebreaks }}</p>
 </div>
 {% endblock %}

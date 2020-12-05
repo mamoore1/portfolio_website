@@ -4,7 +4,7 @@ from django.urls import reverse
 # Model to hold personal information: can therefore be modified through admin
 class PersonalInformation(models.Model):
     """Model holding my personal information"""
-    bio = models.TextField(max_length=1000)
+    bio = models.TextField(max_length=2000)
     email_address = models.EmailField()
 
     def __str__(self):
