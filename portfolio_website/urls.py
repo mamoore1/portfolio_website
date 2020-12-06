@@ -22,6 +22,6 @@ from django.views.generic import RedirectView
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('pages/', include(('pages.urls', 'pages'))),
-    path('npc_generator', include(('npc_generator.urls', 'npc_generator'))),
+    path('npc_generator/', include(('npc_generator.urls', 'npc_generator'))),
     path('', RedirectView.as_view(url='pages/', permanent=False)),
 ] + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
