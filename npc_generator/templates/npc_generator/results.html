@@ -1,9 +1,8 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>NPC Generator</title>
-</head>
+{% extends "base_generic" %}
+
+{% block title %}<title>NPC Generator</title>{% endblock %}
+
+{% block content %}
 <body>
     <h2>D&D 3.5 NPC Generator</h2>
     <a href="javascript:window.location.reload(true)">Generate again.</a>
@@ -21,4 +20,4 @@
     {% endfor %}
 {% endif %}
 </body>
-</html>
+{% endblock %}
